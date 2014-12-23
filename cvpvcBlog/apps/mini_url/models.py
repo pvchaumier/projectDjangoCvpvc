@@ -16,7 +16,7 @@ class MiniURL(models.Model):
     title = models.CharField(max_length=200, blank=True, verbose_name='Titre de la page')
     nb_of_access = models.IntegerField(default=0, verbose_name='Nombre d\'accès au lien')
 
-    def __repr__(self):
+    def __unicode__(self):
         """
             The representation sends back the long URL and the code
         """
@@ -28,7 +28,7 @@ class MiniURL(models.Model):
         """
         if self.pk is None:
             self.mixing_url(5)
-        super().save(*args, **kwargs)
+        super(MiniURL, self).save(*args, **kwargs)
 
     def mixing_url(self, N):
         """

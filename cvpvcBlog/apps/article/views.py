@@ -47,7 +47,7 @@ class ArticleDetailView(generic.DetailView):
         """
             Customization of the function to save the number of views
         """
-        art = super().get_object(queryset)
+        art = super(ArticleDetailView, self).get_object(queryset)
         art.nb_of_view += 1
         art.save()
         return art
@@ -84,6 +84,6 @@ class CategoryArticleListView(generic.ListView):
         """
             adding the category object to the context variables
         """
-        context = super().get_context_data(**kwargs)
+        context = super(CategoryArticleListView, self).get_context_data(**kwargs)
         context['category'] = Category.objects.get(simplified_name=self.kwargs['cate_simplified_name'])
         return context
