@@ -9,5 +9,6 @@ It is fairly simple and was created to put pictures and news form our stay in Ch
 The second one is my personnal sandbox.
 I ll put there my little test (e.g. a little url shortener project with a very simple crawler...)
 
-Hope you'll enjoy !!
+The site is up and running at cvpvc.fr. Feel free to go and check.
 
+Hope you'll enjoy !!

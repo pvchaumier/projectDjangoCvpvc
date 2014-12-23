@@ -5,10 +5,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
-# DEBUG = False
-# TEMPLATE_DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
 # Application definition
 
 INSTALLED_APPS = (
