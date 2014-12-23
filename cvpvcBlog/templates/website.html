@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+        queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file://
+        -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script> <![endif]-->
+{% block meta %}
+{% endblock %}
+        
+{% block style %}
+            <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+{% endblock %}
+        
+        <title>
+            {% block title %}CVPVC Blog{% endblock %}
+        </title>
+    </head>
+    <body>
+{% block nav %}
+        <nav class="text-center">
+            <a data-toggle="tooltip" href="{% url 'blog:index' %}" title="Accueil"><span class="glyphicon glyphicon-home"></span></a>
+            <a data-toggle="tooltip" href="{% url 'blog:article_list' %}" title="Liste des articles"><span class="glyphicon glyphicon-align-justify"></span></a>
+            <a data-toggle="tooltip" href="{% url 'blog:category_list' %}" title="Liste des catégories"><span class="glyphicon glyphicon-th"></span></a>
+        </nav>
+{% endblock %}
+     
+{% block header %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center page-header">
+                    <h1>Bienvenue sur CVPVC.</h1>
+                    <h3 class="lead">CVPVC est le blog de Claire Verney et Pierre-Victor Chaumier</h2>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+        
+{% block content %}
+            <h2>Bienvenue sur notre blog !</h2>
+{% endblock %}
+        
+        <div class="push"></div>
+
+        <footer class="footer">
+{% block footer %}
+            <div class="container">
+                <div class="text-muted text-center">
+                    © Pierre-Victor Chaumier
+                    <br>Design made using <a href="http://www.getbootstrap.com">Bootstrap 3</a> and to <a href="http://glyphicons.com/">Glyphicon</a>
+                    <br>Web site developped using <a href="https://docs.djangoproject.com/">Django Framework</a>
+                    <br>(thanks guys, you rock !)
+                </div>
+            </div>
+{% endblock %}
+        </footer>
+
+{% block js %}
+        <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script>
+            $(function (){
+                $('a').tooltip(); 
+            });
+        </script>
+{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'website.html' %}
+{% load static %}
+
+{% block style %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% if article.category.name == "Code" %}
+<link rel="stylesheet" href="{% static 'css/prism.css' %}">
+{% endif %}
+{% endblock %}
+
+{% block title %}
+CVPVC Blog | {{ article.title }}
+{% endblock %}
+
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center page-header">
+            <h1>{{ article.title}}</h1>
+            <h3 class="lead">{{ article.publication_date }}
+                {% ifnotequal article.publication_date article.last_edited %}
+                <small>- dernière modif {{ article.last_edited }}</small>
+                {% endifnotequal %}
+            </h3>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 article_content">
+                {{ article.content | safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+{{ block.super }}
+{% if article.category.name == "Code" %}
+<script src="{% static 'js/prism.js' %}"></script>
+{% endif %}
+{% endblock %}

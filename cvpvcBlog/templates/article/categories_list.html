@@ -1,0 +1,46 @@
+{% extends 'website.html' %}
+{% load static %}
+
+{% block style %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+CVPVC Blog | Liste des Catégories
+{% endblock %}
+
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center page-header">
+            <h1>Liste des Catégories</h1>
+            <h3 class="lead">les liens mêmes vers les listes d'articles par catégories</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+                {% for cate in categories_list %}
+                    <a href="{% url 'blog:cate_article_list' cate.simplified_name %}"><div class="col-xs-6 col-sm-4 col-md-3 text-center">
+                        <div class='square-box'>
+                            <div class='square-content'>
+                                <div>
+                                    <span><strong>{{ cate.name }}</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></a>
+                {% empty %}
+                Pas de catégories trouvées
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

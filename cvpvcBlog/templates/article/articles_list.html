@@ -1,0 +1,39 @@
+{% extends 'website.html' %}
+{% load static %}
+
+{% block style %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+CVPVC Blog | Liste des Articles
+{% endblock %}
+
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center page-header">
+            <h1>Tous les articles</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container article_list_container">
+    {% for article in articles_list %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 article_list">
+                <h4>
+                    <a href="{% url 'blog:detail' article.pk %}">{{ article.title }}</a><small> - {{ article.publication_date }}</small>
+                </h4>
+            </div>
+        </div>
+    {% empty %}
+        <div class="row">
+            <div class="col-md-8 col-lg-offset-2">Pas d'articles enregistrées</div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

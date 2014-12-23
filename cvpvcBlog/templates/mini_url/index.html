@@ -1,0 +1,35 @@
+{% extends 'website.html' %}
+{% load static %}
+
+{% block style %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style_miniurl.css' %}">
+{% endblock %}
+
+{% block title %}
+Little URL Shortener
+{% endblock %}
+
+{% block nav %}
+<div class="container-full">
+    <nav class='navbar navbar-inverse container'>
+        <div class="navbar-header">
+            <a href="{% url 'miniurl:index' %}" class="navbar-brand">Homemade URL shortener</a>
+        </div>
+        <ul class='nav navbar-nav navbar-right'>
+            <li><a href="{% url 'miniurl:full_list' %}">Full list of shortened URLs</a></li>
+            <li><a href="{% url 'miniurl:new_url' %}">Shorten a URL</a></li>
+            <li><a href="/">Back to the Blog</a></li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

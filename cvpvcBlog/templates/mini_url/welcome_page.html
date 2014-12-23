@@ -1,0 +1,41 @@
+{% extends 'mini_url/index.html' %}
+
+{% block content %}
+    <h3 class="text-center">5 previous URL shortened</h3>
+    {% for mini_url in latest_mini_url_list %}
+        <dl class="text-center">
+            <dt>
+                {% if mini_url.title == 'Page Not Found' %}
+                    Page Not Found, url = {{ mini_url.long_url }}
+                {% else %}
+                    {{ mini_url.title }}
+                {% endif %}
+                - <a href="{% url 'miniurl:short' mini_url.code %}">{{ mini_url.code }}</a>
+            </dt>
+            <dd>
+                créé le {{ mini_url.date_creation|date:"d M Y à G:i" }} 
+                {% if mini_url.pseudo %}
+                    par <strong>{{ mini_url.pseudo }}</strong>
+                {% endif %}
+                et accédé {{ mini_url.nb_of_access }} fois
+            </dd>
+        </dl>
+    {% empty %}
+        <div class="text-center">No URL to show</div>
+    {% endfor %}
+    <div class="row">
+    {% if latest_mini_url_list %}
+        <div class="col-md-offset-2 col-md-4">
+            <h4 class="text-center">Want to see the full list ?</h4>
+            <div class="text-center"><a href="{% url 'miniurl:full_list' %}" class="btn btn-info">Here !</a></div>
+        </div>
+        <div class="col-md-4">
+    {% else %}
+        <div>
+    {% endif %}
+            <h4 class="text-center">Want to shorten a URL ?</h3>
+            <div class="text-center"><a href="{% url 'miniurl:new_url' %}" class='btn btn-info' role="button">Here !</a></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

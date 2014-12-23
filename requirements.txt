@@ -1,0 +1,9 @@
+Django==1.7.1
+Werkzeug==0.9.6
+beautifulsoup4==4.3.2
+django-extensions==1.4.6
+requests==2.5.0
+six==1.8.0
+gunicorn==18.0
+gnureadline==6.3.3
+paramiko==1.15.1
