@@ -4,6 +4,8 @@ from cvpvcBlog.settings.base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 TEMPLATE_DEBUG = True
+# DEBUG = False
+# TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
