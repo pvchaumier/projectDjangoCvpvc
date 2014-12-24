@@ -70,6 +70,10 @@ a:hover{
     margin-top: 20px;
     padding-bottom: 50px;
 }
+.article_content a{
+    color: #B90000;
+    font-weight: bold;
+}
 .square-box{
     position: relative;
     width: 80%;
