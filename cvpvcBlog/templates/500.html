@@ -1,5 +1,10 @@
 {% extends 'website.html' %}
 
+{% block style %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% ednblock %}
+
 {% block header %}
 <div class="container">
     <div class="row">
