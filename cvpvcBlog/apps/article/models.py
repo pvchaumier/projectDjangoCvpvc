@@ -41,7 +41,6 @@ class Category(models.Model):
     def save(self, *args, **kwargs):
         if self.name:
             self.simplified_name = re.sub(r'[^a-zA-Z0-9_]', '_', self.name.lower())
-
         super(Category, self).save(*args, **kwargs)
 
     class Meta:

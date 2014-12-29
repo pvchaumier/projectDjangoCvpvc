@@ -78,8 +78,8 @@ a:hover{
     position: relative;
     width: 80%;
     overflow: hidden;
-    background-color: #353535;
-    /*border: 1px solid #353535;*/
+    /*background-color: #353535;*/
+    border: 1px solid #353535;
     margin: 10px auto;
 }
 .square-box:hover{
@@ -107,7 +107,10 @@ a:hover{
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    /*color: #353535;*/
+    color: #353535;
+    /*color: white;*/
+}
+.square-box:hover .square-content span {
     color: white;
 }
 .footer {
