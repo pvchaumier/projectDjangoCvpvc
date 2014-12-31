@@ -78,12 +78,15 @@ class CategoryArticleListView(generic.ListView):
         """
             returns the list of all categories
         """
-        return Article.objects.filter(category__simplified_name=self.kwargs['cate_simplified_name'])
+        return Article.objects.filter(
+            category__simplified_name=self.kwargs['cate_simplified_name'])
 
     def get_context_data(self, **kwargs):
         """
             adding the category object to the context variables
         """
-        context = super(CategoryArticleListView, self).get_context_data(**kwargs)
-        context['category'] = Category.objects.get(simplified_name=self.kwargs['cate_simplified_name'])
+        context = super(CategoryArticleListView, self).get_context_data(
+            **kwargs)
+        context['category'] = Category.objects.get(
+            simplified_name=self.kwargs['cate_simplified_name'])
         return context

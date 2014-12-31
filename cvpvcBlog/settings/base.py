@@ -16,9 +16,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
-INSTALLED_APPS += (
-    'django_extensions',
-)
 
 INSTALLED_APPS += (
     'cvpvcBlog.apps.article',

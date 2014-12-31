@@ -7,6 +7,15 @@ TEMPLATE_DEBUG = True
 # DEBUG = False
 # TEMPLATE_DEBUG = False
 
+INSTALLED_APPS += (
+    'django_extensions',
+    'debug_toolbar',
+)
+
+MIDDLEWARE_CLASSES += (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
+
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Database
