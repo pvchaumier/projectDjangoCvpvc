@@ -28,7 +28,9 @@ class Article(models.Model):
     category = models.ForeignKey('Category')
 
     def __unicode__(self):
-        return '%s - %s' % self.title, self.publication_date
+        return u'{titre} - {pub_date}'.format(
+            titre=self.title, 
+            pub_date=self.publication_date)
 
 class Comment(models.Model):
     """
@@ -55,7 +57,7 @@ class Category(models.Model):
         verbose_name='Nom simplifié de la catégorie')
 
     def __unicode__(self):
-        return '%s' % self.name
+        return u'{}'.format(self.name)
 
     def save(self, *args, **kwargs):
         if self.name:

@@ -2,7 +2,7 @@
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
-from django.shortcuts import get_object_or_404, redirect, render
+# from django.shortcuts import get_object_or_404, redirect, render
 from django.views import generic
 
 from cvpvcBlog.apps.article.models import Article, Category, Comment
