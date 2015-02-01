@@ -1,0 +1,41 @@
+{% extends 'website.html' %}
+{% load static %}
+
+{% block style %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+CVPVC Blog | Gallerie
+{% endblock %}
+
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center page-header">
+            <h1>Gallerie de notre voyage</h1>
+            <h3 class="lead">Cliquer sur les photos vous permettra de les voir en grand. <br><small>Pour revenir sur la gallerie, il vous faudra faire un retour arrière.</small></h3>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+                {% for image in images %}
+                <figure class="col-sm-4 img_gallery">
+                    <a href="{{ MEDIA_URL }}{{ image.image }}"><img src="{{ MEDIA_URL }}{{ image.image }}" alt="{{ image.title }}" class="img-responsive"></a>
+                    <figcaption class="text-center">{{ image.title }}</figcaption>
+                </figure>
+                {% empty %}
+                Pas de photos
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

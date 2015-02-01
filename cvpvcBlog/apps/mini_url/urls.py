@@ -2,7 +2,7 @@
 
 from django.conf.urls import patterns, url
 
-from cvpvcBlog.apps.mini_url import views
+from . import views
 
 urlpatterns = patterns('',
     url(r'^$', views.IndexView.as_view(), name='index'),

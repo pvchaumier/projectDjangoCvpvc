@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 
 from django.contrib import admin
-from cvpvcBlog.apps.article.models import Article, Comment, Category
+from .models import Article, Comment, Category
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'publication_date', 'last_edited', 'nb_of_view')

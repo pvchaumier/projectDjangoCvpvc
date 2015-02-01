@@ -20,6 +20,7 @@ INSTALLED_APPS = (
 INSTALLED_APPS += (
     'cvpvcBlog.apps.article',
     'cvpvcBlog.apps.mini_url',
+    'cvpvcBlog.apps.picture',
     # 'cvpvcBlog.apps.viewer',
 )
 

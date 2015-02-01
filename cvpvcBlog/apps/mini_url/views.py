@@ -8,8 +8,8 @@ from django.views import generic
 import requests
 from bs4 import BeautifulSoup
 
-from cvpvcBlog.apps.mini_url.forms import MiniURLForm
-from cvpvcBlog.apps.mini_url.models import MiniURL
+from .forms import MiniURLForm
+from .models import MiniURL
 
 class IndexView(generic.ListView):
     """

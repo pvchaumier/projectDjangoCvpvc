@@ -138,3 +138,9 @@ footer a:hover{
     font-weight: bold;
     color:white;
 }
+.img_gallery{
+    padding: 20px;
+}
+.img_gallery > a > img:hover{
+    opacity: 0.6;
+}
