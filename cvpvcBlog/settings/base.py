@@ -16,7 +16,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
-
 INSTALLED_APPS += (
     'cvpvcBlog.apps.article',
     'cvpvcBlog.apps.mini_url',
@@ -49,6 +48,10 @@ USE_TZ = True
 
 APPEND_SLASH = True
 SITE_ID = 1
+
+# Media files, pictures ...
+MEDIA_ROOT = os.path.join(BASE_DIR, 'cvpvcBlog/media')
+MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/

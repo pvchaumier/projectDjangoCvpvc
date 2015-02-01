@@ -8,9 +8,6 @@ TEMPLATE_DEBUG = True
 # TEMPLATE_DEBUG = False
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'cvpvcBlog/media')
-MEDIA_URL = '/media/'
-
 INSTALLED_APPS += (
     'django_extensions',
     'debug_toolbar',
