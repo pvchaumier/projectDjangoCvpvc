@@ -1,6 +1,4 @@
-cvpvcBlog/settings/prod.py
-cvpvcBlog/settings/secret.py
-cvpvcBlog/settings/settings.py
+cvpvcBlog/settings/*
 cvpvcBlog/media/img/*
 __pycache__
 **/migrations/*
