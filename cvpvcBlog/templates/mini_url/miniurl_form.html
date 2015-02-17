@@ -7,7 +7,7 @@
             {{ status }}
             {% ifequal status 'URL saved' %}
                 <br>
-                <a href="{% url 'miniurl:short' miniurl.code %}">{% url 'miniurl:short' miniurl.code %}</a>
+                <a href="{% url 'miniurl:short' miniurl.code %}">{{ request.get_host }}{% url 'miniurl:short' mini_url.code %}</a>
             {% endifequal %}
         {% endif %}
     </p>

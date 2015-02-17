@@ -16,7 +16,7 @@
                 {% else %}
                     {{ mini_url.title }}
                 {% endif %}
-                - <a href="{% url 'miniurl:short' mini_url.code %}">{{ mini_url.code }}</a>
+                - <a href="{% url 'miniurl:short' mini_url.code %}">{{ request.get_host }}{% url 'miniurl:short' mini_url.code %}</a>
             </dt>
             <dd>
                 créé le {{ mini_url.date_creation }} 
