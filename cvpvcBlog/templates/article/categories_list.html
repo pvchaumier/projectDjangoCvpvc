@@ -26,16 +26,18 @@ CVPVC Blog | Liste des Catégories
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="row">
-                {% for cate in categories_list %}
-                    <a href="{% url 'blog:cate_article_list' cate.simplified_name %}"><div class="col-xs-6 col-sm-4 col-md-3 text-center">
+                {% for category in categories_list %}
+                    {% if category.name != "Test" %}
+                    <a href="{% url 'blog:cate_article_list' category.simplified_name %}"><div class="col-xs-6 col-sm-4 col-md-3 text-center">
                         <div class='square-box'>
                             <div class='square-content'>
                                 <div>
-                                    <span><strong>{{ cate.name }}</strong></span>
+                                    <span><strong>{{ category.name }}</strong></span>
                                 </div>
                             </div>
                         </div>
                     </div></a>
+                    {% endif %}
                 {% empty %}
                 Pas de catégories trouvées
                 {% endfor %}

@@ -1,5 +1,6 @@
 {% extends 'website.html' %}
 {% load static %}
+{% load markdown_filter %}
 
 {% block style %}
 {{ block.super }}
@@ -32,7 +33,11 @@ CVPVC Blog | {{ article.title }}
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 article_content">
-                {{ article.content | safe }}
+                {% if article.category.name == "Code" %}
+                    {{ article.content | safe }}
+                {% else %}
+                    {{ article.content | markdownify | safe }}
+                {% endif %}
             </div>
         </div>
     </div>

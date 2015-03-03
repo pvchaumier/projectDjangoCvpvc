@@ -9,12 +9,14 @@
 {% block content %}
     <div class="container article_list_container">
     {% for article in articles_list %}
+        {% if article.category.name != "Test" %}
         <div class="row">
             <div class="col-md-8 col-md-offset-2 article_list">
                 <h4><a href="{% url 'blog:detail' article.pk %}">{{ article.title }}</a> <small> - {{ article.publication_date }}</small>
                 </h4>
             </div>
         </div>
+        {% endif %}
     {% empty %}
         <div class="row">
             <div class="col-md-8 col-lg-offset-2">Pas d'articles enregistrées</div>
