@@ -28,8 +28,8 @@ CVPVC Blog | Gallerie
                 <div class="row">
                 {% for image in images %}
                 <figure class="col-sm-4 img_gallery">
-                    <a href="{{ MEDIA_URL }}{{ image.image }}"><img src="{{ MEDIA_URL }}{{ image.image }}" alt="{{ image.title }}" class="img-responsive"></a>
-                    <figcaption class="text-center">{{ image.title }}</figcaption>
+                    <a href="{{ image.image.url }}"><img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-responsive"></a>
+                    <figcaption class="text-center">{{ image.title }} - {{ image.image }}</figcaption>
                 </figure>
                 {% empty %}
                 Pas de photos
