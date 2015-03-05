@@ -74,6 +74,10 @@ a:hover{
     color: #B90000;
     font-weight: bold;
 }
+.article_content p img {
+    width: 60%;
+    margin: auto;
+}
 .square-box{
     position: relative;
     width: 80%;
