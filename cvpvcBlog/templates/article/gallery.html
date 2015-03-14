@@ -14,7 +14,7 @@ CVPVC Blog | Gallerie
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center page-header">
-            <h1>Gallerie de notre voyage</h1>
+            <h1 class="main">Gallerie de notre voyage</h1>
             <h3 class="lead">Cliquer sur les photos vous permettra de les voir en grand. <br><small>Pour revenir sur la gallerie, il vous faudra faire un retour arrière.</small></h3>
         </div>
     </div>
@@ -29,7 +29,7 @@ CVPVC Blog | Gallerie
                 {% for image in images %}
                 <figure class="col-sm-4 img_gallery">
                     <a href="{{ image.image.url }}"><img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-responsive"></a>
-                    <figcaption class="text-center">{{ image.title }} - {{ image.image }}</figcaption>
+                    <figcaption class="text-center">{{ image.image }}</figcaption>
                 </figure>
                 {% empty %}
                 Pas de photos
