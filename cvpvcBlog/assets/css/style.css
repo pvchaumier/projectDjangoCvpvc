@@ -25,10 +25,11 @@ body{
 }
 h1{
     font-family: 'Playfair Display', 'Helvetica Neue';
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 30px;
 }
 h1.main {
+    font-size: 50px;
     font-weight: bold;
 }
 nav{
@@ -95,7 +96,6 @@ a:hover{
     position: relative;
     width: 80%;
     overflow: hidden;
-    /*background-color: #353535;*/
     border: 1px solid #353535;
     margin: 10px auto;
 }
