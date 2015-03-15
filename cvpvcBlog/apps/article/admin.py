@@ -6,7 +6,7 @@ from django.db import models
 from .models import Article, Comment, Category
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'category', 'publication_date', 'last_edited', 'nb_of_view')
+    list_display = ('title', 'category', 'publication_date', 'last_edited', 'nb_of_view', 'id')
     formfield_overrides = {
         models.TextField: {'widget': Textarea(attrs={'rows':40, 'cols':200})},
     }
