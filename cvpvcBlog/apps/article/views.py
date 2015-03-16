@@ -78,7 +78,10 @@ class CategoryArticleListView(generic.ListView):
             returns the list of all categories
         """
         return Article.objects.filter(
-            category__simplified_name=self.kwargs['cate_simplified_name']).order_by(-publication_date)
+                category__simplified_name=self.kwargs['cate_simplified_name']
+            ).order_by(
+                '-publication_date'
+            )
 
     def get_context_data(self, **kwargs):
         """
