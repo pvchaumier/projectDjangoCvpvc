@@ -165,7 +165,7 @@ footer a:hover{
     padding-top: 20px;
     padding-bottom: 20px;
 }
-figure, .img_gallery.col-sm-3, .img_gallery.col-sm-6, .modal-body .col-sm-12 {
+figure, .img_gallery.col-sm-3, .img_gallery.col-sm-4, .img_gallery.col-sm-6, .img_gallery.col-xs-6, .img_gallery.col-xs-12, .modal-body .col-sm-12 {
     padding: 0;
 }
 .img_gallery {
