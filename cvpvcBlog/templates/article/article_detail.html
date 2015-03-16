@@ -46,7 +46,7 @@ CVPVC Blog | {{ article.title }}
 {% block js %}
 {{ block.super }}
 {% if article.category.name == "Code" %}
-<script src="{% static 'js/prism.js' %}"></script>
+<script src="{% static 'js/lib/prism.js' %}"></script>
 {% else %}
 <script src="{% static 'js/mardown_center_img.js' %}"></script>
 {% endif %}

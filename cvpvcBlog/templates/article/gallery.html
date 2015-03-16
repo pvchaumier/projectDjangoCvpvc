@@ -15,7 +15,7 @@ CVPVC Blog | Gallerie
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center page-header">
             <h1 class="main">Gallerie de notre voyage</h1>
-            <h3 class="lead">Cliquer sur les photos vous permettra de les voir en grand. <br><small>Pour revenir sur la gallerie, il vous faudra faire un retour arrière.</small></h3>
+            <h3 class="lead">Cliquer sur les photos pour les voir en grand. Vous pouvez utiliser les flèches pour vous déplacer.</h3>
         </div>
     </div>
 </div>
@@ -27,10 +27,16 @@ CVPVC Blog | Gallerie
             <div class="col-md-8 col-md-offset-2">
                 <div class="row">
                 {% for image in images %}
-                <figure class="col-sm-4 img_gallery">
-                    <a href="{{ image.image.url }}"><img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-responsive"></a>
-                    <figcaption class="text-center">{{ image.image }}</figcaption>
-                </figure>
+                <img src="{{ image.image.url }}" alt="{{ image.title }}" data-img-nb="{{ forloop.counter0 }}" data-img-total-nb="{{ images.count }}" class="img-responsive img_gallery
+                col-sm-4 col-xs-12
+                {% comment %}
+                {% if image.image.height > image.image.width %}
+                    col-sm-2 col-xs-6
+                {% else %}
+                    col-sm-4 col-xs-12
+                {% endif %}
+                {% endcomment %}
+                ">
                 {% empty %}
                 Pas de photos
                 {% endfor %}
@@ -38,4 +44,30 @@ CVPVC Blog | Gallerie
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="img_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="false">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12" id="img_modal_content">
+                                <img src="" data-img-nb="" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 {% endblock %}
+
+{% block js %}
+{{ block.super }}
+<script src="{% static 'js/function.js' %}"></script>
+{% endblock %}
+

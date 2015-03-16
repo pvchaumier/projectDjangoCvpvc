@@ -92,6 +92,9 @@ a:hover{
     width: 60%;
     margin: auto;
 }
+/*
+    Category
+*/
 .square-box{
     position: relative;
     width: 80%;
@@ -155,9 +158,23 @@ footer a:hover{
     font-weight: bold;
     color:white;
 }
-.img_gallery{
-    padding: 20px;
+/*
+    Gallery
+*/
+#msry-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-.img_gallery > a > img:hover{
-    opacity: 0.6;
+figure, .img_gallery.col-sm-3, .img_gallery.col-sm-6, .modal-body .col-sm-12 {
+    padding: 0;
+}
+.img_gallery {
+    transition: opacity 0.3s;
+}
+.modal-header {
+    border: 0;
+    padding-bottom: 0;
+}
+#img_modal_content > img {
+    margin: auto;
 }
