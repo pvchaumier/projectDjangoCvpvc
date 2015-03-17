@@ -33,7 +33,7 @@ CVPVC Blog | {{ article.title }}
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 article_content">
-                {% if article.category.name == "Code" %}
+                {% if article.category.simplified_name == "pvc" %}
                     {{ article.content | safe }}
                 {% else %}
                     {{ article.content | markdownify | safe }}
@@ -45,7 +45,7 @@ CVPVC Blog | {{ article.title }}
 
 {% block js %}
 {{ block.super }}
-{% if article.category.name == "Code" %}
+{% if article.category.simplified_name == "pvc" %}
 <script src="{% static 'js/lib/prism.js' %}"></script>
 {% else %}
 <script src="{% static 'js/mardown_center_img.js' %}"></script>
