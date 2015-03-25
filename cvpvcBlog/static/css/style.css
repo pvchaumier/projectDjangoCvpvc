@@ -10,10 +10,7 @@
 **    send me an email at myname.myinitials@gmail.com
 **
 \****************************************************/
-@font-face{
-    font-family: 'Playfair Display', serif;
-    src: url('../fonts/PlayfairDisplay-regular.ttf?') format('truetype');
-}
+
 html{
     font-size: 150%;
     position:relative;
@@ -24,7 +21,7 @@ body{
     margin-bottom: 221px;
 }
 h1{
-    font-family: 'Playfair Display', 'Helvetica Neue';
+    font-family: 'Playfair Display', serif, 'Helvetica Neue';
     font-size: 40px;
     margin-top: 30px;
 }
@@ -165,7 +162,7 @@ footer a:hover{
     padding-top: 20px;
     padding-bottom: 20px;
 }
-figure, .img_gallery.col-sm-3, .img_gallery.col-sm-6, .modal-body .col-sm-12 {
+figure, .img_gallery.col-sm-3, .img_gallery.col-sm-4, .img_gallery.col-sm-6, .img_gallery.col-xs-6, .img_gallery.col-xs-12, .modal-body .col-sm-12 {
     padding: 0;
 }
 .img_gallery {
