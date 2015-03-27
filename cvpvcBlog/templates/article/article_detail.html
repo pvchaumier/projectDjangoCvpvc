@@ -5,7 +5,7 @@
 {% block style %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-{% if article.category.name == "Code" %}
+{% if article.category.simplified_name == "pvc" %}
 <link rel="stylesheet" href="{% static 'css/prism.css' %}">
 {% endif %}
 {% endblock %}
