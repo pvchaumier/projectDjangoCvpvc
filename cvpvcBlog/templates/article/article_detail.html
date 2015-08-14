@@ -47,6 +47,7 @@ CVPVC Blog | {{ article.title }}
 {{ block.super }}
 {% if article.category.simplified_name == "pvc" %}
 <script src="{% static 'js/lib/prism.js' %}"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 {% else %}
 <script src="{% static 'js/mardown_center_img.js' %}"></script>
 {% endif %}
